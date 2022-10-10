@@ -1,5 +1,10 @@
 #ifndef chip8_H
 #define chip8_H
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <SDL2/SDL.h>
+
 
 /* 
 chip 8 requires sizes of 1 byte and 2 bytes. 
@@ -11,7 +16,7 @@ typedef unsigned short int TWOBYTES;
 
 // all specs are referenced in wikipedia for chip8 emulation.
 
-struct chip8_defs
+struct Chip8
 {
     // memory
     BYTE gameMemory[4096]; // chip-8 use 4096 bytes of memory (0x000 - 0xFFF)
@@ -22,8 +27,10 @@ struct chip8_defs
     TWOBYTES indexRegister; // 1 16 bit index register
     TWOBYTES programCounter; // 1 16 bit pc register
     TWOBYTES stackPointer; // pointer register for stack
-} chip8def;
 
+    //gpu
+    BYTE display[64][32];
+} chip8def;
 
 
 #endif
