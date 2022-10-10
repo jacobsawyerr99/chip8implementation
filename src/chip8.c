@@ -4,6 +4,10 @@
 // variable for game
 FILE *game;
 
+
+void cpuPrepare();
+void gameStart();
+
 void gameStart()
 {
     char gameName[50];
@@ -11,15 +15,18 @@ void gameStart()
     printf("Enter name of game you would like to play: ");
     scanf("%s", gameName);
 
-    // function to prepare game to be played
-}
+    cpuPrepare(gameName);
+}   
 
-void cpuPrepare()
+void cpuPrepare(char const* gameName)
 {
+
+
+    /*
     chip8def.indexRegister = 0;
     chip8def.programCounter = 0x200; // chip 8 reserves first 512 bytes of memory for interpreter
     memset(chip8def.registers, 0, sizeof(chip8def.registers)); // setting register to 0   
-
+*/
 
     /* loading game
     FILE *gameIn;

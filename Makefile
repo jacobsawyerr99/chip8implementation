@@ -12,7 +12,7 @@ HEADERDIR= src/
 SOURCEDIR= src/
 
 HEADER_FILES= chip8.h gpu.h
-SOURCE_FILES= initializeRom.c gpu.c
+SOURCE_FILES= chip8.c gpu.c
 
 # Add the file path (FP) to the Header and Source files
 HEADERS_PATH = $(addprefix $(HEADERDIR),$(HEADER_FILES))

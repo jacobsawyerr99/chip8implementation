@@ -26,11 +26,20 @@ struct Chip8
     BYTE registers[16]; // 16 registers, each of size 1 byte. VF doubles as a flag
     TWOBYTES indexRegister; // 1 16 bit index register
     TWOBYTES programCounter; // 1 16 bit pc register
-    TWOBYTES stackPointer; // pointer register for stack
+    BYTE stackPointer; // pointer register for stack
 
     //gpu
     BYTE display[64][32];
+    BYTE delay;
+    BYTE sound;
+
+    //controls
+    BYTE keypad[16];
+
+    //opcodes
+    TWOBYTES opcodes;
 } chip8def;
 
+TWOBYTES start_address = 0x200;
 
 #endif
